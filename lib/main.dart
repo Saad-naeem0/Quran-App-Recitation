@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:quran_screen/rectitation.dart';
+import 'dart:html';
 
 void main() {
   runApp(const MyApp());
 }
 
+/
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
