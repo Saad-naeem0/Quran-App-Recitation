@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quran_screen/rectitation.dart';
 
-void main() {
+void main() async {
   runApp(const MyApp());
 }
 
