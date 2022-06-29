@@ -20,14 +20,32 @@ class _RecitationState extends State<Recitation> {
 // @override
   final List<String> _ayah = <String>[
     'بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ',
-    'ٱلْحَمْدُ لِلَّٰهِ',
-    'الله أكبر',
-    'بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ'
+    'ٱلۡحَمۡدُ لِلَّهِ رَبِّ ٱلۡعَـٰلَمِینَ',
+    'ٱلرَّحۡمَـٰنِ ٱلرَّحِیمِ ',
+    '',
+    'إِیَّاكَ نَعۡبُدُ وَإِیَّاكَ نَسۡتَعِینُ',
+    'ٱهۡدِنَا ٱلصِّرَ ٰ⁠طَ ٱلۡمُسۡتَقِیمَ',
+    'صِرَ ٰ⁠طَ ٱلَّذِینَ أَنۡعَمۡتَ عَلَیۡهِمۡ غَیۡرِ ٱلۡمَغۡضُوبِ عَلَیۡهِمۡ وَلَا ٱلضَّاۤلِّینَ '
   ];
 
-  final List<String> _translation = <String>['abc', 'def', 'abc', 'def'];
+  final List<String> _translation = <String>[
+    'abc',
+    'def',
+    'abc',
+    'def',
+    '',
+    '',
+    ''
+  ];
 
-  final List<String> _urduTrans = <String>['آسان', 'مشکل', "اچھا", 'برا'];
+  final List<String> _urduTrans = <String>[
+    'آسان',
+    'مشکل',
+    "اچھا",
+    'برا',
+    '',
+    ''
+  ];
 
   // AudioCache audioCache = AudioCache();
 
@@ -76,7 +94,7 @@ class _RecitationState extends State<Recitation> {
 
     //load audio from assets (assets/ayah1.mp3)
     final player = AudioCache(prefix: 'asset/');
-    final audio1 = await player.load('ayah1.mp3');
+    final audio1 = await player.load('fatiha.mp3');
     audioPlayer1.setSourceUrl(
       audio1.path,
     );
@@ -92,7 +110,7 @@ class _RecitationState extends State<Recitation> {
 
   @override
   Widget build(BuildContext context) {
-    final List<int> colorCodes = <int>[50, 100, 50, 100];
+    final List<int> colorCodes = <int>[50, 100, 50, 100, 50, 100];
     // [for (int i=0; i<=_ayah.length; i++){
     //   if(i%2==0){
     //     50
@@ -142,16 +160,16 @@ class _RecitationState extends State<Recitation> {
                             style: TextStyle(fontSize: 15, color: Colors.grey),
                           ),
                         ),
-                        Slider(
-                            min: 0,
-                            max: duration.inSeconds.toDouble(),
-                            value: position.inSeconds.toDouble(),
-                            onChanged: (value) async {
-                              final position = Duration(seconds: value.toInt());
-                              await audioPlayer1.seek(position);
+                        // Slider(
+                        //     min: 0,
+                        //     max: duration.inSeconds.toDouble(),
+                        //     value: position.inSeconds.toDouble(),
+                        //     onChanged: (value) async {
+                        //       final position = Duration(seconds: value.toInt());
+                        //       await audioPlayer1.seek(position);
 
-                              await audioPlayer1.resume();
-                            }),
+                        //       await audioPlayer1.resume();
+                        //     }),
                         Padding(
                           padding: const EdgeInsets.only(left: 330),
                           child: IconButton(
